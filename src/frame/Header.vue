@@ -4,13 +4,13 @@
  * @module widgets/xdh-header
  */
 
-import HeaderLogo from './Logo'
-import HeaderNav from './Nav'
-import HeaderSearch from './Search'
-import HeaderTitle from './Title'
-import HeaderTool from './Tool'
-import HeaderUser from './User'
-import HeaderSlot from './Slot'
+import HeaderLogo from './components/Logo'
+import HeaderNav from './components/Nav'
+import HeaderSearch from './components/Search'
+import HeaderTitle from './components/Title'
+import HeaderTool from './components/Tool'
+import HeaderUser from './components/User'
+import HeaderSlot from './components/Slot'
 
 /**
  * slots
@@ -247,7 +247,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../style/vars";
+@import "./style/vars";
 
 .xdh-header {
   height: 60px;

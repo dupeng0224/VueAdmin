@@ -15,7 +15,7 @@
  * 面包屑组件
  * @module widgets/xdh-breadcrumb
  */
-import createStoreModule from './store'
+import createStoreModule from './store/breadcrumb'
 
 /**
  * 插槽
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/vars";
+@import "./style/vars";
 
 .xdh-breadcrumb {
   height: 30px;

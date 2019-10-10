@@ -1,10 +1,7 @@
 <template>
   <div class="xdh-header__tool">
     <slot>
-      <div class="header-tool-item" :class="classes"
-           v-for="(item,index) in data"
-           :key="index"
-           @click="handleClick(item)">
+      <div class="header-tool-item" :class="classes" v-for="(item,index) in data" :key="index" @click="handleClick(item)">
         <i :class="item[props.icon]"></i>
         {{item[props.text]}}
       </div>

@@ -205,7 +205,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../style/vars";
+@import "./style/vars";
 
 .xdh-menu {
   border: none;

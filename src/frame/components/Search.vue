@@ -1,21 +1,11 @@
 <template>
   <div class="xdh-header__search" :style="styles">
     <slot>
-      <el-input :placeholder="placeholder"
-                v-model="searchText"
-                :size="size">
-        <el-select v-model="currentType"
-                   slot="prepend"
-                   placeholder="请选择"
-                   v-if="types && types.length>0">
-          <el-option v-for="(item, index) in types"
-                     :key="index"
-                     :label="item[prop.label]"
-                     :value="item[prop.value]"></el-option>
+      <el-input :placeholder="placeholder" v-model="searchText" :size="size">
+        <el-select v-model="currentType" slot="prepend" placeholder="请选择" v-if="types && types.length>0">
+          <el-option v-for="(item, index) in types" :key="index" :label="item[prop.label]" :value="item[prop.value]"></el-option>
         </el-select>
-        <el-button slot="append"
-                   icon="el-icon-search"
-                   @click="handleSearch"></el-button>
+        <el-button slot="append" icon="el-icon-search" @click="handleSearch"></el-button>
       </el-input>
     </slot>
   </div>
@@ -82,7 +72,6 @@ export default {
       this.$emit('search', this.searchText, this.currentType, e)
     }
   },
-  created () {
-  }
+  created () {}
 }
 </script>

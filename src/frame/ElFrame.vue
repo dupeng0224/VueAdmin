@@ -10,8 +10,9 @@
         <slot name="header-user" slot="user"></slot>
         <slot name="header-tool" slot="tool">
           <span class="sys-theme" slot="header-tool">
-            <el-color-picker size="small" v-model="color"></el-color-picker>
-        </span></slot>
+            <el-color-picker size="small" v-model="color"></el-color-picker>            
+          </span>          
+        </slot>
         <slot name="header-slot"></slot>
       </Header>
     </slot>
@@ -58,11 +59,11 @@
 </template>
 
 <script>
-import Breadcrumb from './breadcrumb'
-import Header from './header'
-import Layout from './layout'
-import MenuToggle from './menuToggle'
-import NavTabs from './navTabs'
+import Breadcrumb from './BreadCrumb'
+import Header from './Header'
+import Layout from './Layout'
+import MenuToggle from './MenuToggle'
+import NavTabs from './NavTabs'
 import data from './config'
 import themeMixin from './utils/theme'
 import { traverse } from './utils/util'
@@ -133,7 +134,7 @@ export default {
     return {
       info: data.info,
       footer: true, // 是否显示底部
-      fixed: false, // 高度固定100%适应
+      fixed: true, // 高度固定100%适应
       footerInMain: true, // 底部放入main里面
       fixedWidth: false, // 内容区域宽度固定
       sidebar: true, // 是否显示侧边栏
@@ -150,13 +151,15 @@ export default {
         closable: false
       },
       menu: {
-        data: data.enterprise.items
+        data: data.nav[0].items
       },
       header: {
         navRouter: true,
         navDefaultActive: '',
-        layout: 'logo,title,->,nav,tool',
-        nav: data.nav.items,
+        layout: 'logo,title,nav,->,user,tool',
+        nav: data.nav,
+        userIcon: 'iconfont icon-exit',
+        userText: '系统退出',
         ...data.info
       }
     }
@@ -219,13 +222,15 @@ export default {
     '$route.path': {
       immediate: true,
       handler (val) {
-        const categroyArray = ['cookroom', 'enterprise', 'grade', 'sourcetrace', 'supervise']
         const category = val.split('/')[1]
-        if (categroyArray.includes(category)) {
-          this.menu.data = data[category || 'enterprise'].items
-        } else {
-          this.menu.data = data.enterprise.items
+        var itemData = data.nav[0].items
+        for (let i = 0, len = data.nav.length; i < len; i++) {
+          if (data.nav[i].code === category) {
+            itemData = data.nav[i].items
+            break
+          }
         }
+        this.menu.data = itemData
 
         // 路由切换，router-view内容滚动到顶部
         this.$refs.body && (this.$refs.body.scrollTop = 0)
@@ -495,7 +500,7 @@ export default {
     margin-top: 13px;
     margin-left: 10px;
     display: inline-block;
-    >>> .el-color-picker__trigger {
+    .el-color-picker__trigger {
       background: #fff;
     }
   }

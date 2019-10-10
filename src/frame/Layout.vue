@@ -99,7 +99,7 @@
  *     <div slot="south">South</div>
  * </xdh-layout>
  */
-import Resizable from '../utils/directives/resizable'
+import Resizable from './utils/directives/resizable'
 
 const defaultOptions = {
   split: false,
@@ -308,7 +308,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/vars";
+@import "./style/vars";
 
 .xdh-layout {
   &__north {

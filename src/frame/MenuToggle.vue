@@ -41,7 +41,7 @@
 /**
  * 折叠菜单组件
  */
-import Menu from '../menu'
+import Menu from './Menu'
 export default {
   name: 'MenuToggle',
   components: {
@@ -165,7 +165,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/vars";
+@import "./style/vars";
 
 $menu-toggle-index: $--index-top;
 

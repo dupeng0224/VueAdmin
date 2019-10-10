@@ -66,7 +66,7 @@
  * @property {string} label 自定义选项卡标题内容, 参数：item 当前选项卡数据，index 数据所在数组索引
  *
  */
-import createStoreModule from './store'
+import createStoreModule from './store/navtabs'
 
 /**
  * slots
@@ -209,8 +209,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../style/vars";
-@import "../style/mixin";
+@import "./style/vars";
+@import "./style/mixin";
 
 .xdh-nav-tabs {
   font-size: 0;

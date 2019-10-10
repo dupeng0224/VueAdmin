@@ -3,51 +3,20 @@ import Enterprise from './enterprise'
 import Grade from './grade'
 import SourceTrace from './sourcetrace'
 import Supervise from './supervise'
-import Nav from './nav'
-import Animate from './animate'
 import packageJSON from '../../../package'
 import logo from '../../assets/logo.png'
-import { traverse } from '../utils/util'
-
-function getCount (array) {
-  let count = 0
-  traverse(array, false, function (item) {
-    if (!(item.children && item.children.length > 0)) {
-      ++count
-    }
-  })
-  return count
-}
 
 export default {
   info: {
-    copyright: `星云网络 前端开发部 出品 @ 2019 [ v${packageJSON.version} ]`,
+    copyright: `星云网络 出品 @ 2019 [ v${packageJSON.version} ]`,
     logo: logo,
     title: `智慧监管平台 v${packageJSON.version.split('-')[0]}`
   },
-  cookroom: {
-    items: Cookroom,
-    count: getCount(Cookroom)
-  },
-  enterprise: {
-    items: Enterprise,
-    count: getCount(Enterprise)
-  },
-  grade: {
-    items: Grade,
-    count: getCount(Grade)
-  },
-  sourcetrace: {
-    items: SourceTrace,
-    count: getCount(SourceTrace)
-  },
-  supervise: {
-    items: Supervise,
-    count: getCount(Supervise)
-  },
-  nav: {
-    items: Nav,
-    count: getCount(Nav)
-  },
-  animate: Animate
+  nav: [
+    { text: '主体管理', code: 'enterprise', id: '/enterprise/worksheet', icon: 'iconfont el-icon-location', items: Enterprise },
+    { text: '监管系统', code: 'supervise', id: '/supervise/information', icon: 'iconfont icon-target', items: Supervise },
+    { text: '阳光厨房', code: 'cookroom', id: '/cookroom/information', icon: 'iconfont icon-flask', items: Cookroom },
+    { text: '溯源监管', code: 'sourcetrace', id: '/sourcetrace/information', icon: 'iconfont icon-flask', items: SourceTrace },
+    { text: '等级评定', code: 'grade', id: '/grade/information', icon: 'iconfont icon-flask', items: Grade }
+  ]
 }
