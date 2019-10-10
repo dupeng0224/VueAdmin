@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Frame from './frame/ElFrame.vue'
+import AiFrame from './frame/AiFrame.vue'
 import { traverse } from './frame/utils/util'
 import data from './frame/config'
 Vue.use(Router)
@@ -29,7 +29,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Frame,
+      component: AiFrame,
       children: [
         {
           path: '',
