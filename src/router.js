@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AiFrame from './frame/AiFrame.vue'
 import { traverse } from './frame/utils/util'
-import data from './frame/config'
+import data from './config'
 Vue.use(Router)
 
 function getComponent (item) {

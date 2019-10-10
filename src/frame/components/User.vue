@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     handleCommand (command) {
-      this.$message('click on item ' + command);
+      this.$message('click on item ' + command)
     }
   }
 }

@@ -3,9 +3,9 @@ import Enterprise from './enterprise'
 import Grade from './grade'
 import SourceTrace from './sourcetrace'
 import Supervise from './supervise'
-import packageJSON from '../../../package'
-import logo from '../../assets/logo.png'
-import user from '../../assets/user.png'
+import packageJSON from '../../package'
+import logo from '../assets/logo.png'
+import user from '../assets/user.png'
 
 export default {
   info: {

@@ -10,8 +10,8 @@
         <slot name="header-user" slot="user"></slot>
         <slot name="header-tool" slot="tool">
           <span class="sys-theme" slot="header-tool">
-            <el-color-picker size="small" v-model="color"></el-color-picker>            
-          </span>          
+            <el-color-picker size="small" v-model="color"></el-color-picker>
+          </span>
         </slot>
         <slot name="header-slot"></slot>
       </Header>
@@ -64,7 +64,7 @@ import Header from './Header'
 import Layout from './Layout'
 import MenuToggle from './MenuToggle'
 import NavTabs from './NavTabs'
-import data from './config'
+import data from '../config'
 import themeMixin from './utils/theme'
 import { traverse } from './utils/util'
 
@@ -223,7 +223,6 @@ export default {
       immediate: true,
       handler (val) {
         const category = val.split('/')[1]
-        
         var itemData = data.nav[0].items
         for (let i = 0, len = data.nav.length; i < len; i++) {
           if (data.nav[i].code === category) {
