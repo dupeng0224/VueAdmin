@@ -158,7 +158,7 @@ export default {
         navDefaultActive: '',
         layout: 'logo,title,nav,->,user,tool',
         nav: data.nav,
-        userIcon: 'iconfont icon-exit',
+        userIcon: data.info.user,
         userText: '系统退出',
         ...data.info
       }
@@ -223,6 +223,7 @@ export default {
       immediate: true,
       handler (val) {
         const category = val.split('/')[1]
+        
         var itemData = data.nav[0].items
         for (let i = 0, len = data.nav.length; i < len; i++) {
           if (data.nav[i].code === category) {

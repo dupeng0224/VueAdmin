@@ -412,7 +412,7 @@ export default {
 
   }
   &__user {
-    font-size: 14px;
+    font-size: 14px; 
     .header-user__info {
       height: 60px;
       line-height: 60px;
